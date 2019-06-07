@@ -8,6 +8,11 @@ export default function OperatorL (orca, x, y, passive) {
   this.name = 'loop'
   this.info = 'Moves eastward operands'
 
+  this.theme = {
+    bg: 'b_l',
+    fg: 'f_l'
+  }
+
   this.ports.step = { x: -2, y: 0, default: '1' }
   this.ports.len = { x: -1, y: 0 }
   this.ports.val = { x: 1, y: 0 }

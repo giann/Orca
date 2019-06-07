@@ -8,6 +8,11 @@ export default function OperatorF (orca, x, y, passive) {
   this.name = 'if'
   this.info = 'Bangs if inputs are equal'
 
+  this.theme = {
+    bg: 'b_f',
+    fg: 'f_f'
+  }
+
   this.ports.a = { x: -1, y: 0 }
   this.ports.b = { x: 1, y: 0 }
   this.ports.output = { x: 0, y: 1, bang: true }

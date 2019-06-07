@@ -8,6 +8,11 @@ export default function OperatorG (orca, x, y, passive) {
   this.name = 'generator'
   this.info = 'Writes operands with offset'
 
+  this.theme = {
+    bg: 'b_g',
+    fg: 'f_g'
+  }
+
   this.ports.x = { x: -3, y: 0 }
   this.ports.y = { x: -2, y: 0 }
   this.ports.len = { x: -1, y: 0, clamp: { min: 1 } }

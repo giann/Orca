@@ -25,7 +25,68 @@ export default function Terminal () {
   this.controller = new Controller()
 
   // Themes
-  this.theme = new Theme({ background: '#000000', f_high: '#ffffff', f_med: '#777777', f_low: '#444444', f_inv: '#000000', b_high: '#eeeeee', b_med: '#72dec2', b_low: '#444444', b_inv: '#ffb545' })
+  this.theme = new Theme({
+    background: '#000000',
+    f_high: '#ffffff',
+    f_med: '#777777',
+    f_low: '#444444',
+    f_inv: '#000000',
+    b_high: '#eeeeee',
+    b_med: '#72dec2',
+    b_low: '#444444',
+    b_inv: '#ffb545',
+
+    b_a: '#92ACCD',
+    f_a: '#444444',
+    b_b: '#DE7272',
+    f_b: '#444444',
+    b_c: '#DE9A72',
+    f_c: '#444444',
+    b_d: '#DEC272',
+    f_d: '#444444',
+    b_e: '#D8DE72',
+    f_e: '#444444',
+    b_f: '#A1DE72',
+    f_f: '#444444',
+    b_g: '#72DE77',
+    f_g: '#444444',
+    b_h: '#72DEBF',
+    f_h: '#444444',
+    b_i: '#72C5DE',
+    f_i: '#444444',
+    b_j: '#72AADE',
+    f_j: '#444444',
+    b_k: '#7291DE',
+    f_k: '#444444',
+    b_l: '#7A72DE',
+    f_l: '#444444',
+    b_m: '#A072DE',
+    f_m: '#444444',
+    b_n: '#C472DE',
+    f_n: '#444444',
+    b_o: '#DE72D5',
+    f_o: '#444444',
+    b_q: '#DE72AE',
+    f_q: '#444444',
+    b_r: '#DE5B44',
+    f_r: '#444444',
+    b_s: '#DE9544',
+    f_s: '#444444',
+    b_t: '#DEC544',
+    f_t: '#444444',
+    b_u: '#CFDE44',
+    f_u: '#444444',
+    b_v: '#93DE44',
+    f_v: '#444444',
+    b_w: '#44DE5A',
+    f_w: '#444444',
+    b_x: '#44DED0',
+    f_x: '#444444',
+    b_y: '#448BDE',
+    f_y: '#444444',
+    b_z: '#4E44DE',
+    f_z: '#444444'
+  })
 
   this.el = document.createElement('canvas')
   this.context = this.el.getContext('2d')
@@ -237,7 +298,8 @@ export default function Terminal () {
       for (let x = 0; x < this.orca.w; x++) {
         const glyph = this.makeGlyph(x, y)
         const style = this.makeStyle(x, y, glyph, selection)
-        this.drawSprite(x, y, glyph, style)
+        const theme = this.orca.themeAt(x, y)
+        this.drawSprite(x, y, glyph, style, theme)
       }
     }
   }
@@ -293,8 +355,11 @@ export default function Terminal () {
     }
   }
 
-  this.drawSprite = function (x, y, g, type) {
-    const theme = this.makeTheme(type)
+  this.drawSprite = function (x, y, g, type, theme) {
+    theme = theme && type === 0 ? {
+      fg: this.theme.active[theme.fg],
+      bg: this.theme.active[theme.bg]
+    } : this.makeTheme(type)
     if (theme.bg) {
       const bgrect = { x: x * this.tile.w * this.scale, y: (y) * this.tile.h * this.scale, w: this.tile.w * this.scale, h: this.tile.h * this.scale }
       this.context.fillStyle = theme.bg

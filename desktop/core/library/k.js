@@ -8,6 +8,11 @@ export default function OperatorK (orca, x, y, passive) {
   this.name = 'konkat'
   this.info = 'Reads multiple variables'
 
+  this.theme = {
+    bg: 'b_k',
+    fg: 'f_k'
+  }
+
   this.ports.len = { x: -1, y: 0, clamp: { min: 1 } }
 
   this.operation = function (force = false) {

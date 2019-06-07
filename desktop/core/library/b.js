@@ -8,6 +8,11 @@ export default function OperatorB (orca, x, y, passive) {
   this.name = 'bounce'
   this.info = 'Outputs values between inputs'
 
+  this.theme = {
+    bg: 'b_b',
+    fg: 'f_b'
+  }
+
   this.ports.rate = { x: -1, y: 0, clamp: { min: 1 } }
   this.ports.mod = { x: 1, y: 0, default: '8' }
   this.ports.output = { x: 0, y: 1, sensitive: true }

@@ -8,6 +8,11 @@ export default function OperatorJ (orca, x, y, passive) {
   this.name = 'jumper'
   this.info = 'Outputs northward operand'
 
+  this.theme = {
+    bg: 'b_j',
+    fg: 'f_j'
+  }
+
   this.ports.val = { x: 0, y: -1 }
   this.ports.output = { x: 0, y: 1 }
 

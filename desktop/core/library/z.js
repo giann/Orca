@@ -8,6 +8,11 @@ export default function OperatorZ (orca, x, y, passive) {
   this.name = 'lerp'
   this.info = 'Transitions operand to target'
 
+  this.theme = {
+    bg: 'b_z',
+    fg: 'f_z'
+  }
+
   this.ports.rate = { x: -1, y: 0, default: '1' }
   this.ports.target = { x: 1, y: 0 }
   this.ports.output = { x: 0, y: 1, sensitive: true, reader: true }

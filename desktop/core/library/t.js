@@ -8,6 +8,11 @@ export default function OperatorT (orca, x, y, passive) {
   this.name = 'track'
   this.info = 'Reads eastward operand'
 
+  this.theme = {
+    bg: 'b_t',
+    fg: 'f_t'
+  }
+
   this.ports.key = { x: -2, y: 0 }
   this.ports.len = { x: -1, y: 0, clamp: { min: 1 } }
   this.ports.output = { x: 0, y: 1 }

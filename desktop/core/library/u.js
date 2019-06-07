@@ -8,6 +8,11 @@ export default function OperatorU (orca, x, y, passive) {
   this.name = 'uclid'
   this.info = 'Bangs on Euclidean rhythm'
 
+  this.theme = {
+    bg: 'b_u',
+    fg: 'f_u'
+  }
+
   this.ports.step = { x: -1, y: 0, clamp: { min: 0 }, default: '1' }
   this.ports.max = { x: 1, y: 0, clamp: { min: 1 }, default: '8' }
   this.ports.output = { x: 0, y: 1, bang: true }

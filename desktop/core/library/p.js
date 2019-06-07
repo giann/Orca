@@ -8,6 +8,11 @@ export default function OperatorP (orca, x, y, passive) {
   this.name = 'push'
   this.info = 'Writes eastward operand'
 
+  this.theme = {
+    bg: 'b_p',
+    fg: 'f_p'
+  }
+
   this.ports.len = { x: -1, y: 0, clamp: { min: 1 } }
   this.ports.key = { x: -2, y: 0 }
   this.ports.val = { x: 1, y: 0 }

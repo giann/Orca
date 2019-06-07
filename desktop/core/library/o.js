@@ -8,6 +8,11 @@ export default function OperatorO (orca, x, y, passive) {
   this.name = 'read'
   this.info = 'Reads operand with offset'
 
+  this.theme = {
+    bg: 'b_o',
+    fg: 'f_o'
+  }
+
   this.ports.x = { x: -2, y: 0 }
   this.ports.y = { x: -1, y: 0 }
   this.ports.output = { x: 0, y: 1 }

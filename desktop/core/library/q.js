@@ -8,6 +8,11 @@ export default function OperatorQ (orca, x, y, passive) {
   this.name = 'query'
   this.info = 'Reads operands with offset'
 
+  this.theme = {
+    bg: 'b_q',
+    fg: 'f_q'
+  }
+
   this.ports.x = { x: -3, y: 0 }
   this.ports.y = { x: -2, y: 0 }
   this.ports.len = { x: -1, y: 0, clamp: { min: 1 } }

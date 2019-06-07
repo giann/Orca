@@ -7,6 +7,7 @@ export default function Operator (orca, x, y, glyph = '.', passive = false) {
   this.passive = passive
   this.draw = passive
   this.glyph = passive ? glyph.toUpperCase() : glyph
+  this.theme = null
   this.info = '--'
   this.ports = { bang: !passive }
 

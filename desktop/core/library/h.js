@@ -8,6 +8,11 @@ export default function OperatorH (orca, x, y, passive) {
   this.name = 'halt'
   this.info = 'Halts southward operand'
 
+  this.theme = {
+    bg: 'b_h',
+    fg: 'f_h'
+  }
+
   this.ports.output = { x: 0, y: 1, reader: true }
 
   this.operation = function (force = false) {

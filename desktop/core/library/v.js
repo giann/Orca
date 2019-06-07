@@ -8,6 +8,11 @@ export default function OperatorV (orca, x, y, passive) {
   this.name = 'variable'
   this.info = 'Reads and writes variable'
 
+  this.theme = {
+    bg: 'b_v',
+    fg: 'f_v'
+  }
+
   this.ports.write = { x: -1, y: 0 }
   this.ports.read = { x: 1, y: 0 }
 

@@ -155,6 +155,11 @@ export default function Orca (terminal) {
     return this.s.charAt(this.indexAt(x, y))
   }
 
+  this.themeAt = function (x, y) {
+    const operator = this.operatorAt(x, y)
+    return operator ? operator.theme : null
+  }
+
   this.valueAt = function (x, y) {
     return this.valueOf(this.glyphAt(x, y))
   }
